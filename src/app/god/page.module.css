@@ -1,0 +1,119 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.header {
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 2rem;
+}
+
+.title {
+    font-family: var(--font-merriweather);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    color: var(--primary);
+}
+
+.subtitle {
+    font-family: var(--font-inter);
+    font-size: 1.125rem;
+    color: var(--muted-foreground);
+    line-height: 1.6;
+}
+
+.section {
+    margin-bottom: 4rem;
+}
+
+.sectionTitle {
+    font-family: var(--font-inter);
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--foreground);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.icon {
+    color: var(--secondary);
+}
+
+.text {
+    font-family: var(--font-inter);
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--foreground);
+    margin-bottom: 1.5rem;
+}
+
+.logicBlock {
+    background-color: var(--muted);
+    padding: 2rem;
+    border-left: 4px solid var(--primary);
+    border-radius: var(--radius);
+    font-family: var(--font-inter);
+    line-height: 1.8;
+    margin-top: 1.5rem;
+}
+
+.argumentBox {
+    background-color: var(--muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.premise {
+    margin-bottom: 1rem;
+    font-family: var(--font-inter);
+    display: flex;
+    gap: 1rem;
+}
+
+.premiseNum {
+    font-weight: 700;
+    color: var(--secondary);
+}
+
+.conclusion {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed var(--border);
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.attributeGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.attributeCard {
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    text-align: center;
+    background-color: var(--card);
+}
+
+.attrTitle {
+    font-family: var(--font-inter);
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.attrDesc {
+    font-size: 0.9rem;
+    color: var(--muted-foreground);
+    font-family: var(--font-inter);
+}

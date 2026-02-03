@@ -1,13 +1,63 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Light Mode */
+  --background: #FDFBF7;
+  /* Warm Paper */
+  --foreground: #1A1A1A;
+  --card: #FFFFFF;
+  --card-foreground: #1A1A1A;
+  --popover: #FFFFFF;
+  --popover-foreground: #1A1A1A;
+  --primary: #8C7335;
+  /* Antique Gold */
+  --primary-foreground: #FFFFFF;
+  --secondary: #2C5F58;
+  /* Deep Islamic Teal */
+  --secondary-foreground: #FFFFFF;
+  --muted: #F3F4F6;
+  --muted-foreground: #6B7280;
+  --accent: #D4AF37;
+  /* Bright Gold */
+  --accent-foreground: #1A1A1A;
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --border: #E5E7EB;
+  --input: #E5E7EB;
+  --ring: #8C7335;
+  --radius: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Dark Mode */
+    --background: #0B101B;
+    /* Deep Navy/Black */
+    --foreground: #F3F4F6;
+    --card: #161E2E;
+    --card-foreground: #F3F4F6;
+    --popover: #161E2E;
+    --popover-foreground: #F3F4F6;
+    --primary: #D4AF37;
+    /* Bright Gold */
+    --primary-foreground: #0B101B;
+    --secondary: #4FD1C5;
+    /* Ligher Teal */
+    --secondary-foreground: #0B101B;
+    --muted: #1F2937;
+    --muted-foreground: #9CA3AF;
+    --accent: #FDE047;
+    --accent-foreground: #0B101B;
+    --destructive: #991B1B;
+    --destructive-foreground: #F3F4F6;
+    --border: #374151;
+    --input: #374151;
+    --ring: #D4AF37;
   }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 html,
@@ -19,24 +69,28 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1.8;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-inter), sans-serif;
+  letter-spacing: -0.025em;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1.5rem;
 }
 
 a {
   color: inherit;
   text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }

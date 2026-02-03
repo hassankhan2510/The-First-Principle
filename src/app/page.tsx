@@ -1,66 +1,66 @@
-import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
+import AssumptionToggle from "@/components/ui/AssumptionToggle";
+import KnowledgeMap from "@/components/ui/KnowledgeMap";
+import { Brain, Scale, ShieldOff, ArrowRight } from "lucide-react";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
+    <div className={styles.container}>
+      <header className={styles.hero}>
+        <h1 className={styles.title}>
+          Teaches how to think,<br />not what to chant.
+        </h1>
+        <p className={styles.subtitle}>
+          A structured, first-principles approach to Islamic Philosophy.
+          <br />
+          Navigate the intellectual map below to explore the connection between Reason, God, and Science.
+        </p>
+
+        <div style={{ marginTop: "3rem", marginBottom: "2rem" }}>
+          <h3 className={styles.sectionTitle} style={{ marginBottom: "1rem" }}>The Curriculum Map</h3>
+          <KnowledgeMap />
+        </div>
+      </header>
+
+      <section className={styles.section}>
+        <h2 className={styles.sectionTitle}>The Rules of Engagement</h2>
+        <div className={styles.rulesGrid}>
+          <div className={styles.ruleCard}>
+            <div className={styles.ruleIconWrapper}>
+              <ShieldOff size={28} />
+            </div>
+            <h3 className={styles.ruleTitle}>No Preaching</h3>
+            <p className={styles.ruleDesc}>We analyze the logic of belief. We do not demand blind submission.</p>
+          </div>
+          <div className={styles.ruleCard}>
+            <div className={styles.ruleIconWrapper}>
+              <Brain size={28} />
+            </div>
+            <h3 className={styles.ruleTitle}>Arguments &gt; Conclusions</h3>
+            <p className={styles.ruleDesc}>A true conclusion built on a weak premise is still a weak argument.</p>
+          </div>
+          <div className={styles.ruleCard}>
+            <div className={styles.ruleIconWrapper}>
+              <Scale size={28} />
+            </div>
+            <h3 className={styles.ruleTitle}>Intellectual Honesty</h3>
+            <p className={styles.ruleDesc}>We address the strongest counter-arguments, not strawman fallacies.</p>
+          </div>
+        </div>
+      </section>
+
+      <div style={{ marginTop: "4rem" }}>
+        <AssumptionToggle
+          statement="Most people inherit their beliefs without ever questioning their foundations."
+          assumptions={[
+            "Beliefs are often socially approximated rather than intellectually constructed.",
+            "Questioning foundations is necessary for true conviction (Yaqeen).",
+            "Stability of faith requires knowing 'why' not just 'what'."
+          ]}
+          context="Example of how we analyze statements:"
         />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
+      </div>
     </div>
   );
 }

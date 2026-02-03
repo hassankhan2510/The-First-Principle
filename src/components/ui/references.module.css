@@ -1,0 +1,43 @@
+.referencesContainer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+}
+
+.refTitle {
+    font-family: var(--font-inter);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--muted-foreground);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.refList {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+}
+
+.refItem {
+    font-family: var(--font-inter);
+    background-color: var(--muted);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border-left: 3px solid var(--secondary);
+    display: flex;
+    flex-direction: column;
+}
+
+.bookTitle {
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.author {
+    font-size: 0.85rem;
+    color: var(--muted-foreground);
+}

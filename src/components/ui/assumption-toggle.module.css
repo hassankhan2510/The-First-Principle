@@ -1,0 +1,80 @@
+.card {
+    border: 1px solid var(--border);
+    background-color: var(--card);
+    border-radius: var(--radius);
+    color: var(--card-foreground);
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-color: var(--accent);
+}
+
+.statement {
+    font-family: var(--font-merriweather);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.5;
+}
+
+.toggleButton {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--font-inter);
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--primary);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    transition: color 0.2s;
+}
+
+.toggleButton:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.assumptionsContainer {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed var(--border);
+    overflow: hidden;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.assumptionsTitle {
+    font-family: var(--font-inter);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--muted-foreground);
+    margin-bottom: 0.5rem;
+}
+
+.assumptionsList {
+    list-style-type: none;
+    padding: 0;
+}
+
+.assumptionItem {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--foreground);
+}
+
+.assumptionItem::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--secondary);
+}
