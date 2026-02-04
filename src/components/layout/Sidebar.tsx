@@ -7,34 +7,49 @@ import styles from "./sidebar.module.css";
 import { cn } from "@/lib/utils";
 import {
     BookOpen, Brain, GitBranch, Scale,
-    Database, Network, Microscope, ShieldAlert, Sparkles, Zap, Globe, Dna, FlaskConical, Menu, X, History,
-    LayoutTemplate, Library
+    Network, Microscope, ShieldAlert, Sparkles, Zap, Globe, Dna, FlaskConical, Menu, X, History,
+    LayoutTemplate, Library, ArrowLeft, Home
 } from "lucide-react";
 import Search from "@/components/ui/Search";
 
 const navItems = [
-    { name: "Foundations", href: "/foundations", icon: Brain },
-    { name: "Logic & Argumentation", href: "/logic", icon: GitBranch },
-    { name: "Islamic Epistemology", href: "/epistemology", icon: BookOpen },
-    { name: "God (Ilāhiyyāt)", href: "/god", icon: Sparkles },
-    { name: "Science & Reason", href: "/science", icon: Zap },
-    { name: "Ethics (Akhlaq)", href: "/ethics", icon: Scale },
-    { name: "The Problem of Evil", href: "/evil", icon: ShieldAlert },
-    { name: "Free Will & Qadar", href: "/freewill", icon: Network },
-    { name: "The Soul & Consciousness", href: "/soul", icon: Microscope },
-    { name: "Psychology of Doubt", href: "/psychology", icon: Brain },
-    { name: "History of Ideas (Timeline)", href: "/history", icon: History },
-    { name: "Political Philosophy", href: "/politics", icon: Scale },
-    { name: "The Applied Lens", href: "/applied", icon: LayoutTemplate },
-    { name: "Astronomy (Fine-Tuning)", href: "/science/astronomy", icon: Globe },
-    { name: "Quantum (Observer Effect)", href: "/science/quantum", icon: Zap },
-    { name: "Biology (Debunking Darwin)", href: "/science/biology", icon: Dna },
-    { name: "Scientific Myths", href: "/science/myths", icon: FlaskConical },
+    // Philosophy Track (Default)
+    { name: "Foundations", href: "/foundations", icon: Brain, domain: "philosophy" },
+    { name: "Logic & Argumentation", href: "/logic", icon: GitBranch, domain: "philosophy" },
+    { name: "Islamic Epistemology", href: "/epistemology", icon: BookOpen, domain: "philosophy" },
+    { name: "God (Ilāhiyyāt)", href: "/god", icon: Sparkles, domain: "philosophy" },
+    { name: "Ethics (Akhlaq)", href: "/ethics", icon: Scale, domain: "philosophy" },
+    { name: "The Problem of Evil", href: "/evil", icon: ShieldAlert, domain: "philosophy" },
+    { name: "Free Will & Qadar", href: "/freewill", icon: Network, domain: "philosophy" },
+    { name: "The Soul & Consciousness", href: "/soul", icon: Microscope, domain: "philosophy" },
+    { name: "Psychology of Doubt", href: "/psychology", icon: Brain, domain: "philosophy" },
+    { name: "Political Philosophy", href: "/politics", icon: Scale, domain: "philosophy" },
+
+    // Science Suite
+    { name: "Astronomy (Fine-Tuning)", href: "/science/astronomy", icon: Globe, domain: "science" },
+    { name: "Quantum (Observer Effect)", href: "/science/quantum", icon: Zap, domain: "science" },
+    { name: "Biology (Debunking Darwin)", href: "/science/biology", icon: Dna, domain: "science" },
+    { name: "Scientific Myths", href: "/science/myths", icon: FlaskConical, domain: "science" },
+    { name: "Science & Reason", href: "/science", icon: Zap, domain: "science" }, // General intro
+
+    // The Living Library
+    { name: "The Answer Bank", href: "/answers", icon: Library, domain: "library" },
+    { name: "History of Ideas", href: "/history", icon: History, domain: "library" },
+    { name: "The Applied Lens", href: "/applied", icon: LayoutTemplate, domain: "library" },
 ];
 
 export default function Sidebar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
+
+    // Determine current domain
+    let currentDomain = "home";
+    if (pathname.startsWith("/science")) currentDomain = "science";
+    else if (pathname === "/answers" || pathname === "/history" || pathname === "/applied") currentDomain = "library";
+    else if (pathname !== "/") currentDomain = "philosophy";
+
+    // Filter items
+    const visibleItems = navItems.filter(item => item.domain === currentDomain);
 
     return (
         <>
@@ -58,18 +73,33 @@ export default function Sidebar() {
                     The First Principle
                 </Link>
 
-                <div className="px-6 mb-4">
-                    <Link href="/answers" className="block w-full text-center bg-primary text-primary-foreground py-2 rounded-full font-bold text-sm hover:opacity-90 transition-opacity">
-                        <Library className="inline mr-2 mb-1" size={16} /> The Answer Bank
-                    </Link>
-                </div>
-
                 <Search />
 
+                {/* Context Header / Switcher */}
+                {currentDomain !== "home" && (
+                    <div className="mb-6 px-2">
+                        <Link href="/" className="flex items-center text-xs font-bold text-muted-foreground hover:text-primary transition-colors mb-4">
+                            <ArrowLeft size={14} className="mr-1" /> Back to Hub
+                        </Link>
+                        <h3 className="text-sm font-black uppercase tracking-widest text-primary border-b border-border pb-2 mb-2">
+                            {currentDomain === "philosophy" && "Philosophy Track"}
+                            {currentDomain === "science" && "Science Suite"}
+                            {currentDomain === "library" && "Living Library"}
+                        </h3>
+                    </div>
+                )}
+
                 <nav className={styles.nav}>
-                    {navItems.map((item) => {
+                    {/* If on Home, show nothing or just main links? 
+                        Actually, let's show Philosophy by default if on Home, OR show nothing 
+                        and let the Home Page be the only navigator. 
+                        Better UX: If on Home, show nothing (clean). 
+                        BUT, users might want quick access. 
+                        Let's fallback to Philosophy if on Home so it's not empty. */}
+
+                    {(currentDomain === "home" ? navItems.filter(i => i.domain === "philosophy") : visibleItems).map((item) => {
                         const Icon = item.icon;
-                        const isActive = pathname.startsWith(item.href);
+                        const isActive = pathname === item.href; // Exact match or startswith?
                         return (
                             <Link
                                 key={item.href}
