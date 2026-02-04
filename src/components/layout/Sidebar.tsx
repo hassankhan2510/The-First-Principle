@@ -7,7 +7,7 @@ import styles from "./sidebar.module.css";
 import { cn } from "@/lib/utils";
 import {
     BookOpen, Brain, GitBranch, Scale,
-    Database, Network, Microscope, ShieldAlert, Sparkles, Zap, Globe, Dna, FlaskConical, Menu, X
+    Database, Network, Microscope, ShieldAlert, Sparkles, Zap, Globe, Dna, FlaskConical, Menu, X, History
 } from "lucide-react";
 import Search from "@/components/ui/Search";
 
@@ -22,6 +22,7 @@ const navItems = [
     { name: "Free Will & Qadar", href: "/freewill", icon: Network },
     { name: "The Soul & Consciousness", href: "/soul", icon: Microscope },
     { name: "Psychology of Doubt", href: "/psychology", icon: Brain },
+    { name: "History of Ideas (Timeline)", href: "/history", icon: History },
     { name: "Political Philosophy", href: "/politics", icon: Scale },
     { name: "Astronomy (Fine-Tuning)", href: "/science/astronomy", icon: Globe },
     { name: "Quantum (Observer Effect)", href: "/science/quantum", icon: Zap },

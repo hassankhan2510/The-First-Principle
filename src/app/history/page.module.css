@@ -1,0 +1,136 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.title {
+    font-family: var(--font-merriweather);
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+    background: linear-gradient(135deg, var(--foreground) 0%, var(--muted-foreground) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+/* The Vertical Line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--border);
+    transform: translateX(-50%);
+}
+
+.timelineItem {
+    position: relative;
+    margin-bottom: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.timelineContent {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    width: 45%;
+    position: relative;
+    /* transition: transform 0.2s ease, box-shadow 0.2s ease; */
+}
+
+/* Left vs Right positioning */
+.timelineItem:nth-child(odd) {
+    justify-content: flex-start;
+}
+
+.timelineItem:nth-child(even) {
+    justify-content: flex-end;
+}
+
+/* Dots on the line */
+.timelineItem::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 1.5rem;
+    width: 16px;
+    height: 16px;
+    background: var(--primary);
+    border: 3px solid var(--background);
+    border-radius: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.year {
+    display: inline-block;
+    background: var(--muted);
+    color: var(--primary);
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    margin-bottom: 0.5rem;
+}
+
+.itemTitle {
+    font-family: var(--font-merriweather);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.symptom {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(239, 68, 68, 0.1);
+    /* Red tint */
+    border-left: 3px solid #ef4444;
+    font-size: 0.9rem;
+    color: var(--foreground);
+}
+
+.cure {
+    margin-top: 0.5rem;
+    padding: 0.75rem;
+    background: rgba(34, 197, 94, 0.1);
+    /* Green tint */
+    border-left: 3px solid #22c55e;
+    font-size: 0.9rem;
+    color: var(--foreground);
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 20px;
+    }
+
+    .timelineItem {
+        justify-content: flex-end;
+        padding-left: 40px;
+    }
+
+    .timelineItem::after {
+        left: 20px;
+    }
+
+    .timelineContent {
+        width: 100%;
+    }
+}

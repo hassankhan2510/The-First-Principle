@@ -13,6 +13,12 @@ export const searchIndex: SearchItem[] = [
         keywords: ["epistemology", "truth", "senses", "reason", "logic", "map territory"],
     },
     {
+        title: "History of Ideas (Timeline)",
+        href: "/history",
+        description: "The Genealogy of Confusion. Descartes to Nietzsche. How we lost the truth.",
+        keywords: ["history", "descartes", "hume", "kant", "nietzsche", "philosophy", "timeline"],
+    },
+    {
         title: "Logic & Argumentation",
         href: "/logic",
         description: "Deduction, Induction, Fallacies, and Islamic Qiyas.",
