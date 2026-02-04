@@ -31,66 +31,113 @@
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
 }
 
-.card {
-    background: var(--card);
-    border: 1px solid var(--border);
+/* FLIP CARD STYLES */
+.flipCard {
+    background-color: transparent;
+    height: 400px;
+    /* Fixed height for consistency */
+    perspective: 1000px;
+    /* 3D Perspective */
+    cursor: pointer;
+}
+
+.flipCardInner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: left;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flipCard:hover .flipCardInner {
+    transform: rotateY(180deg);
+}
+
+.flipCardFront,
+.flipCardBack {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
     border-radius: var(--radius);
+    border: 1px solid var(--border);
     overflow: hidden;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-.cardHeader {
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border);
+/* FRONT STYLING */
+.flipCardFront {
+    background-color: var(--card);
     display: flex;
+    flex-direction: column;
+    padding: 2rem;
     align-items: center;
-    gap: 1rem;
+    justify-content: center;
+    text-align: center;
 }
 
-.cardIcon {
-    width: 40px;
-    height: 40px;
+.frontIcon {
+    width: 64px;
+    height: 64px;
+    background: var(--muted);
+    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    background: var(--muted);
     color: var(--primary);
-}
-
-.cardTitle {
-    font-family: var(--font-merriweather);
-    font-size: 1.25rem;
-    font-weight: 700;
-}
-
-.cardContent {
-    padding: 1.5rem;
-}
-
-.narrativeBox {
-    background: rgba(var(--primary-rgb), 0.05);
-    border-left: 3px solid var(--primary);
-    padding: 1rem;
     margin-bottom: 1.5rem;
+}
+
+.frontTitle {
+    font-family: var(--font-merriweather);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.frontNarrative {
     font-style: italic;
     color: var(--muted-foreground);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.tapHint {
+    margin-top: auto;
+    font-size: 0.8rem;
+    color: var(--muted-foreground);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    opacity: 0.7;
+}
+
+/* BACK STYLING */
+.flipCardBack {
+    background-color: var(--primary);
+    /* Accent background */
+    color: var(--primary-foreground);
+    transform: rotateY(180deg);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
 }
 
 .deconstructionTitle {
-    font-size: 0.85rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--muted-foreground);
+    letter-spacing: 0.1em;
+    font-size: 0.85rem;
+    opacity: 0.8;
+    margin-bottom: 1rem;
     font-weight: 700;
-    margin-bottom: 0.75rem;
-    display: block;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 0.5rem;
 }
 
 .point {
@@ -100,12 +147,18 @@
 }
 
 .point strong {
-    color: var(--foreground);
-    font-weight: 600;
+    color: white;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 1rem;
 }
 
 @media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
     }
+
+    /* On mobile, maybe don't use hover? Or tap to flip logic if needed. 
+       For now, hover works on touch as a "tap" usually. */
 }

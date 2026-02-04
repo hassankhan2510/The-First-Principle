@@ -46,6 +46,11 @@ export default function HistoryPage() {
                         <div className={styles.symptom}>
                             <strong>The Virus:</strong> Skepticism. "We can't really know anything for sure."
                         </div>
+                        <div className="mt-4 text-center">
+                            <a href="/epistemology" className="inline-flex items-center text-xs font-bold text-primary hover:underline">
+                                See The Cure: Epistemology &rarr;
+                            </a>
+                        </div>
                     </div>
                 </div>
 
@@ -83,6 +88,11 @@ export default function HistoryPage() {
                             <strong>The Error:</strong> Confusing Mechanism with Agency. Explaining *how* life adapts doesn't explain *why* life exists or *where* the information (DNA) came from.</p>
                         <div className={styles.symptom}>
                             <strong>The Virus:</strong> Naturalism. "Nature is all there is. We are just accidents."
+                        </div>
+                        <div className="mt-4 text-center">
+                            <a href="/science/biology" className="inline-flex items-center text-xs font-bold text-red-500 hover:text-red-600 hover:underline">
+                                See The Debunk: Biology &rarr;
+                            </a>
                         </div>
                     </div>
                 </div>
