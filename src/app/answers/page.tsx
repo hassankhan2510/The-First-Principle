@@ -27,6 +27,17 @@ export default function AnswersPage() {
         setOpenId(openId === id ? null : id);
     };
 
+    const renderAnswer = (text: string) => {
+        // Simple parser for **bold** text
+        const parts = text.split(/(\*\*.*?\*\*)/g);
+        return parts.map((part, index) => {
+            if (part.startsWith("**") && part.endsWith("**")) {
+                return <strong key={index} className="text-primary font-bold">{part.slice(2, -2)}</strong>;
+            }
+            return part;
+        });
+    };
+
     return (
         <div className={styles.container}>
             <header className={styles.header}>
@@ -86,7 +97,7 @@ export default function AnswersPage() {
                             </div>
                             {openId === item.id && (
                                 <div className={styles.qaAnswer}>
-                                    {item.answer}
+                                    {renderAnswer(item.answer)}
                                 </div>
                             )}
                         </div>

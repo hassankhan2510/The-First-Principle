@@ -42,6 +42,9 @@ export default function Sidebar() {
     const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
 
+    // Completely hide sidebar on Home Page
+    if (pathname === "/") return null;
+
     // Determine current domain
     let currentDomain = "home";
     if (pathname.startsWith("/science")) currentDomain = "science";

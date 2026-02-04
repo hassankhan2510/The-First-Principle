@@ -20,9 +20,7 @@ export const metadata: Metadata = {
   description: "A first-principles approach to Islamic Philosophy. Teaches how to think, not just what to chant.",
 };
 
-import Sidebar from "@/components/layout/Sidebar";
-
-import styles from "./layout.module.css";
+import Shell from "@/components/layout/Shell";
 
 export default function RootLayout({
   children,
@@ -32,12 +30,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${merriweather.variable}`}>
-        <div className={styles.container}>
-          <Sidebar />
-          <main className={styles.main}>
-            {children}
-          </main>
-        </div>
+        <Shell>
+          {children}
+        </Shell>
       </body>
     </html>
   );
