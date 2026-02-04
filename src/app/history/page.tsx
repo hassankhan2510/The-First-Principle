@@ -1,5 +1,5 @@
 import styles from "./page.module.css";
-import { History, Brain, Skull, CloudOff, Lock, Anchor } from "lucide-react";
+import { History, Brain, Skull, CloudOff, Lock, Anchor, Dna } from "lucide-react";
 
 export default function HistoryPage() {
     return (
