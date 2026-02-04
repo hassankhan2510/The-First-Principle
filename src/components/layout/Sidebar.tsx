@@ -7,7 +7,6 @@ import styles from "./sidebar.module.css";
 import { cn } from "@/lib/utils";
 import {
     BookOpen, Brain, GitBranch, Scale,
-    BookOpen, Brain, GitBranch, Scale,
     Database, Network, Microscope, ShieldAlert, Sparkles, Zap, Globe, Dna, FlaskConical, Menu, X, History,
     LayoutTemplate
 } from "lucide-react";
