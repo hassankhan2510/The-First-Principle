@@ -103,3 +103,13 @@
     left: 0;
     color: var(--primary);
 }
+
+@media (max-width: 768px) {
+    .vsContainer {
+        grid-template-columns: 1fr;
+    }
+
+    .logicBlock {
+        padding: 1.5rem;
+    }
+}
