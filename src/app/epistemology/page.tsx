@@ -30,25 +30,25 @@ export default function EpistemologyPage() {
                     <div className={styles.card}>
                         <h3 className={styles.cardTitle}><Eye size={20} /> 1. Hiss (Senses)</h3>
                         <p className={styles.cardText}>
-                            **Tool:** <JargonBuster term="Hiss" definition="Sense perception. The five senses (sight, hearing, etc.) used to observe the physical world." /> (Observation).
-                            <span className="block mt-2">**Domain:** The Physical World (Fire burns, Planets orbit).</span>
-                            <span className="block mt-1 text-red-400">**Limit:** Cannot tell you if Justice is good, or if Numbers exist.</span>
+                            <strong>Tool:</strong> <JargonBuster term="Hiss" definition="Sense perception. The five senses (sight, hearing, etc.) used to observe the physical world." /> (Observation).
+                            <span className="block mt-2"><strong>Domain:</strong> The Physical World (Fire burns, Planets orbit).</span>
+                            <span className="block mt-1 text-red-400"><strong>Limit:</strong> Cannot tell you if Justice is good, or if Numbers exist.</span>
                         </p>
                     </div>
                     <div className={styles.card}>
                         <h3 className={styles.cardTitle}><Brain size={20} /> 2. Aql (Reason)</h3>
                         <p className={styles.cardText}>
-                            **Tool:** <JargonBuster term="Aql" definition="The Intellect/Reason. The faculty that processes data and understands abstract concepts (Mathematics, Logic)." /> (Deduction).
-                            <span className="block mt-2">**Domain:** Self-Evident Truths (The whole &gt; the part).</span>
-                            <span className="block mt-1 text-red-400">**Limit:** Science *presupposes* Reason. You assume logic to do science.</span>
+                            <strong>Tool:</strong> <JargonBuster term="Aql" definition="The Intellect/Reason. The faculty that processes data and understands abstract concepts (Mathematics, Logic)." /> (Deduction).
+                            <span className="block mt-2"><strong>Domain:</strong> Self-Evident Truths (The whole &gt; the part).</span>
+                            <span className="block mt-1 text-red-400"><strong>Limit:</strong> Science *presupposes* Reason. You assume logic to do science.</span>
                         </p>
                     </div>
                     <div className={styles.card}>
                         <h3 className={styles.cardTitle}><BookOpen size={20} /> 3. Khabar (Report)</h3>
                         <p className={styles.cardText}>
-                            **Tool:** <JargonBuster term="Mutawatir" definition="Mass-Transmitted Report. A report conveyed by so many people at every stage that collusion on a lie is impossible." /> (Verification).
-                            <span className="block mt-2">**Domain:** History & The Unseen (God, Afterlife).</span>
-                            <span className="block mt-1 text-red-400">**Limit:** You know your parents are your parents only by Report, not Science.</span>
+                            <strong>Tool:</strong> <JargonBuster term="Mutawatir" definition="Mass-Transmitted Report. A report conveyed by so many people at every stage that collusion on a lie is impossible." /> (Verification).
+                            <span className="block mt-2"><strong>Domain:</strong> History & The Unseen (God, Afterlife).</span>
+                            <span className="block mt-1 text-red-400"><strong>Limit:</strong> You know your parents are your parents only by Report, not Science.</span>
                         </p>
                     </div>
                 </div>
