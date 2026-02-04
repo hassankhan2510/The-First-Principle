@@ -96,4 +96,10 @@ export const searchIndex: SearchItem[] = [
         description: "The heart's role in doubt. Al-Ghazali's diagnosis of skepticism.",
         keywords: ["psychology", "doubt", "waswasa", "heart", "ghazali", "certainty", "fitrah"],
     },
+    {
+        title: "The Answer Bank",
+        href: "/answers",
+        description: "A searchable library of answers to common doubts (Evolution, Evil, Hijab).",
+        keywords: ["answers", "faq", "questions", "library", "doubts", "search"],
+    },
 ];

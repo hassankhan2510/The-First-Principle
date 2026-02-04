@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 import {
     BookOpen, Brain, GitBranch, Scale,
     Database, Network, Microscope, ShieldAlert, Sparkles, Zap, Globe, Dna, FlaskConical, Menu, X, History,
-    LayoutTemplate
+    LayoutTemplate, Library
 } from "lucide-react";
 import Search from "@/components/ui/Search";
 
@@ -57,6 +57,12 @@ export default function Sidebar() {
                 <Link href="/" className={styles.logo} onClick={() => setIsOpen(false)}>
                     The First Principle
                 </Link>
+
+                <div className="px-6 mb-4">
+                    <Link href="/answers" className="block w-full text-center bg-primary text-primary-foreground py-2 rounded-full font-bold text-sm hover:opacity-90 transition-opacity">
+                        <Library className="inline mr-2 mb-1" size={16} /> The Answer Bank
+                    </Link>
+                </div>
 
                 <Search />
 
