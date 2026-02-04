@@ -155,7 +155,7 @@ export default function HistoryPage() {
                             <br />2. <strong>We trust Science</strong> as the study of God's Habits (Sunnah).
                             <br />3. <strong>We trust Revelation</strong> because it bypasses the limits of the finite mind.</p>
                         <div className={styles.cure}>
-                            <strong>The Cure:</strong> La ilaha illa Allah. There is no reality but The Reality.
+                            <strong>The Cure:</strong> La ilaha illa Allah. There is no god but Allah.
                         </div>
                     </div>
                 </div>
