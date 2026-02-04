@@ -1,106 +1,144 @@
 import styles from "./page.module.css";
 import AssumptionToggle from "@/components/ui/AssumptionToggle";
 import References from "@/components/ui/References";
-import { Dna, Fingerprint, Scissors, AlertTriangle, Code } from "lucide-react";
+import { Dna, Fingerprint, Scissors, AlertTriangle, Code, Calculator, Timer, Layers, Microscope } from "lucide-react";
 
 export default function BiologyPage() {
     return (
         <div className={styles.container}>
             <header className={styles.header}>
-                <h1 className={styles.title}>Biology: The Information Problem</h1>
+                <h1 className={styles.title}>Biology: The Death of Darwinism</h1>
                 <p className={styles.subtitle}>
-                    "Biology is the study of complicated things that have the appearance of having been designed for a purpose." — Richard Dawkins (Atheist)
-                    <br />
-                    Why do they "appear" designed? Because they <strong>are</strong>.
+                    "If it could be demonstrated that any complex organ existed which could not possibly have been formed by numerous, successive, slight modifications, my theory would absolutely break down." — Charles Darwin
                 </p>
+                <div className="mt-4 p-4 bg-red-500/10 border border-red-500 rounded-lg inline-block text-red-400 font-bold">
+                    Spoiler: It broke down.
+                </div>
             </header>
 
+            {/* 1. The Mathematical Problem */}
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
-                    <Code className={styles.icon} />
-                    1. DNA is literally Code (Software)
+                    <Calculator className={styles.icon} />
+                    1. The Mathematical Impossibility
                 </h2>
-                <p className={styles.text}>
-                    Atheists confuse <strong>Chemistry</strong> (Ink) with <strong>Information</strong> (The Book).
-                    The laws of physics can create a crystal (pattern), but they cannot create a Code (Language).
-                </p>
                 <div className={styles.logicBlock}>
-                    <strong>The Microsoft Outlook Argument:</strong>
-                    If you saw binary code for "Outlook.exe" written in sand, would you assume the waves wrote it?
-                    <br /><br />
-                    DNA is a 4-character digital code (A,C,T,G) that instructs the cell how to build proteins.
-                    <strong>Information never arises from mindless matter.</strong> It always comes from a Mind.
-                </div>
-            </section>
-
-            <section className={styles.section}>
-                <h2 className={styles.sectionTitle}>
-                    <Scissors className={styles.icon} />
-                    2. Debunking "Darwinism" (Macro-Evolution)
-                </h2>
-                <p className={styles.text}>
-                    We must distinguish between scientific observation and philosophical storytelling.
-                </p>
-                <div className={styles.vsContainer}>
-                    <div className={styles.vsCol} style={{ backgroundColor: "var(--muted)" }}>
-                        <h4 className={styles.vsTitle}>Adaptation (Micro) - TRUE</h4>
-                        <ul className={styles.vsList}>
-                            <li>Observed in lab.</li>
-                            <li>Bacteria developing resistance.</li>
-                            <li>Beak sizes changing (Finches).</li>
-                            <li><strong>Loss</strong> or shuffling of existing info.</li>
-                        </ul>
-                    </div>
-                    <div className={styles.vsCol} style={{ backgroundColor: "var(--card)" }}>
-                        <h4 className={styles.vsTitle}>Darwinism (Macro) - FALSE</h4>
-                        <ul className={styles.vsList}>
-                            <li>Never observed.</li>
-                            <li>Fish turning into Philosophers.</li>
-                            <li>Origin of NEW organs/plans.</li>
-                            <li>Requires <strong>Generation</strong> of NEW info.</li>
-                        </ul>
+                    <p className="mb-4">
+                        Neo-Darwinism claims that <strong>Random Mutation + Natural Selection</strong> created all life.
+                        Math says: <strong>Impossible.</strong>
+                    </p>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                        <div className="bg-card p-6 rounded-lg border border-border">
+                            <h4 className="text-xl font-bold mb-2 text-primary flex items-center gap-2">
+                                <Timer size={20} /> The Waiting Time Problem
+                            </h4>
+                            <p className="text-sm text-muted-foreground">
+                                To get just <strong>2 specific coordinated mutations</strong> (e.g., to create a simple new binding site) in a fruit fly population takes <strong>100 Million Years</strong>.
+                            </p>
+                            <p className="mt-4 text-xs font-mono bg-muted p-2 rounded">
+                                Source: Behe & Snoke (2004), Sanford (2008).
+                                <br />Evolution is too slow to produce complex life in 4.5 billion years.
+                            </p>
+                        </div>
+                        <div className="bg-card p-6 rounded-lg border border-border">
+                            <h4 className="text-xl font-bold mb-2 text-primary flex items-center gap-2">
+                                <Layers size={20} /> The Probability Limit
+                            </h4>
+                            <p className="text-sm text-muted-foreground">
+                                The chance of forming <strong>ONE functional protein</strong> (150 amino acids) by chance is <strong>1 in 10⁷⁷</strong>.
+                            </p>
+                            <p className="mt-4 text-xs font-mono bg-muted p-2 rounded">
+                                Atoms in the galaxy: 10⁶⁶.
+                                <br />There are not enough atoms or seconds in the universe to get even <em>one</em> protein by luck.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </section>
 
+            {/* 2. The Fossil Problem */}
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
                     <Fingerprint className={styles.icon} />
-                    3. Homology: Common Ancestor or Common Designer?
+                    2. The Fossil Fail: The Cambrian Explosion
                 </h2>
                 <p className={styles.text}>
-                    Textbooks show the similar bone structure of a bat wing and human hand and say: "Proof of Ancestry!"
+                    Darwin predicted a "Tree of Life" — starting with one simple organism and slowly branching out.
+                    The Fossil Record shows a <strong>Big Bang</strong>.
                 </p>
                 <AssumptionToggle
-                    statement="Similarity proves we are all related to a rock 'soup' 4 billion years ago."
+                    statement="The fossil record shows slow, gradual change over billions of years."
                     assumptions={[
-                        "Alternative Explanation: Common Designer using a 'Design Template'.",
-                        "If you see a Porsche and a VW Beetle share parts, do you assume the Porsche evolved from the Beetle? Or that the same Engineer built both?",
-                        "Similarity is evidence of efficiency, not necessarily lineage."
+                        "Fact: 530 Million Years Ago, nearly ALL major animal body plans (Phyla) appeared suddenly.",
+                        "No ancestors. No transitions. Just 'POOF' -> Complex Animals (with eyes, guts, spinal cords).",
+                        "Darwin knew this. He called it 'fatal' to his theory. He hoped we'd find the missing links. 150 years later... we still haven't."
                     ]}
-                    context="The Homology Fallacy:"
+                    context="Reality Check (The Cambrian Explosion):"
                 />
             </section>
 
+            {/* 3. The Mechanics Problem */}
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
-                    <Dna className={styles.icon} />
-                    4. The Mutation Problem
+                    <Microscope className={styles.icon} />
+                    3. Irreducible Complexity (The Mouse Trap)
                 </h2>
                 <p className={styles.text}>
-                    Darwinism relies on "Random Mutation" to build new features.
-                    <br />
-                    <strong>The Problem:</strong> Mutations are typos. 99.9% are harmful or neutral.
-                    You cannot write the Encyclopedia Britannica by randomly hitting backspace on a keyboard for a billion years.
-                    Time degrades information (Entropy); it does not create it.
+                    Neo-Darwinism works by "slight, successive modifications." You build a car by adding one bolt at a time, and <em>every version must drive</em>.
                 </p>
+                <div className="mt-6 border-l-4 border-primary pl-6 py-2 bg-primary/5 rounded-r-lg">
+                    <h3 className="text-lg font-bold">Exhibit A: The Bacterial Flagellum</h3>
+                    <p className="mt-2 text-sm italic text-muted-foreground">
+                        A biological rotary motor. 100,000 RPM. Reverses in 1/4 turn. Water-cooled.
+                    </p>
+                    <ul className="mt-4 space-y-2 list-disc pl-5">
+                        <li>It has <strong>40 structural parts</strong> (Rotor, Stator, Drive Shaft, U-Joint).</li>
+                        <li>If you remove <strong>ONE part</strong>, it doesn't spin 50% slower. <strong>It stops completely.</strong></li>
+                        <li><strong>Conclusion:</strong> It could not have evolved step-by-step. All 40 parts had to be there at once. That is <strong>Design</strong>.</li>
+                    </ul>
+                </div>
+            </section>
+
+            {/* 4. The Information Problem */}
+            <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>
+                    <Code className={styles.icon} />
+                    4. The DNA Code (The Fatal Blow)
+                </h2>
+                <p className={styles.text}>
+                    The most devastating argument against Materialism is Information.
+                </p>
+                <div className={styles.vsContainer}>
+                    <div className={styles.vsCol} style={{ backgroundColor: "var(--muted)" }}>
+                        <h4 className={styles.vsTitle}>Matter (Hardware)</h4>
+                        <ul className={styles.vsList}>
+                            <li>Ink on Paper.</li>
+                            <li>Silicon in a Chip.</li>
+                            <li>Chemicals in DNA (Sugar, Phosphate).</li>
+                            <li><strong>Follows Physics.</strong></li>
+                        </ul>
+                    </div>
+                    <div className={styles.vsCol} style={{ backgroundColor: "var(--card)" }}>
+                        <h4 className={styles.vsTitle}>Information (Software)</h4>
+                        <ul className={styles.vsList}>
+                            <li>The Words "I Love You".</li>
+                            <li>The Windows 11 OS.</li>
+                            <li>The Instructions to build an Eye.</li>
+                            <li><strong>Follows Syntax/Meaning.</strong></li>
+                        </ul>
+                    </div>
+                </div>
+                <div className="mt-6 text-center italic font-serif text-lg text-muted-foreground">
+                    "Information is entirely independent of the medium. <br />You cannot explain a book by studying the chemistry of the ink."
+                </div>
             </section>
 
             <div style={{ marginTop: "4rem" }}>
                 <References items={[
-                    { title: "Signature in the Cell", author: "Dr. Stephen Meyer", note: "Mathematical proof that DNA information cannot be random." },
-                    { title: "Darwin's Doubt", author: "Dr. Stephen Meyer", note: "The Cambrian Explosion: Animals appeared suddenly, not gradually." },
-                    { title: "Evolution: A Theory in Crisis", author: "Dr. Michael Denton", note: "Agnostic biologist dismantling the mechanism of selection." }
+                    { title: "Darwin's Doubt", author: "Dr. Stephen Meyer", note: "The definitive book on the Cambrian Explosion." },
+                    { title: "Genetic Entropy", author: "Dr. John Sanford", note: "Cornell Geneticist proves genomes degrade over time; they don't improve." },
+                    { title: "The Edge of Evolution", author: "Dr. Michael Behe", note: "Defining the mathematical limits of random mutation." },
+                    { title: "Evolution: A Theory in Crisis (3rd Ed)", author: "Dr. Michael Denton", note: "Why the scientific elite are secretly moving on from Darwin." }
                 ]} />
             </div>
         </div>
