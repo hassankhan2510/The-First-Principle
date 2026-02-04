@@ -61,6 +61,12 @@ export const searchIndex: SearchItem[] = [
         keywords: ["politics", "democracy", "liberalism", "sharia", "caliphate", "freedom", "law"],
     },
     {
+        title: "The Applied Lens",
+        href: "/applied",
+        description: "Deconstructing modern headlines (Feminism, AI, Consumerism) using First Principles.",
+        keywords: ["feminism", "ai", "liberalism", "consumerism", "culture war", "modernity"],
+    },
+    {
         title: "Astronomy & Fine-Tuning",
         href: "/science/astronomy",
         description: "The Fine-Tuning Argument vs The Multiverse. Evidence of Design.",

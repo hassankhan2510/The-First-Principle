@@ -7,7 +7,9 @@ import styles from "./sidebar.module.css";
 import { cn } from "@/lib/utils";
 import {
     BookOpen, Brain, GitBranch, Scale,
-    Database, Network, Microscope, ShieldAlert, Sparkles, Zap, Globe, Dna, FlaskConical, Menu, X, History
+    BookOpen, Brain, GitBranch, Scale,
+    Database, Network, Microscope, ShieldAlert, Sparkles, Zap, Globe, Dna, FlaskConical, Menu, X, History,
+    LayoutTemplate
 } from "lucide-react";
 import Search from "@/components/ui/Search";
 
@@ -24,6 +26,7 @@ const navItems = [
     { name: "Psychology of Doubt", href: "/psychology", icon: Brain },
     { name: "History of Ideas (Timeline)", href: "/history", icon: History },
     { name: "Political Philosophy", href: "/politics", icon: Scale },
+    { name: "The Applied Lens", href: "/applied", icon: LayoutTemplate },
     { name: "Astronomy (Fine-Tuning)", href: "/science/astronomy", icon: Globe },
     { name: "Quantum (Observer Effect)", href: "/science/quantum", icon: Zap },
     { name: "Biology (Debunking Darwin)", href: "/science/biology", icon: Dna },
