@@ -1,74 +1,92 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import AssumptionToggle from "@/components/ui/AssumptionToggle";
-import { Brain, Scale, ShieldOff, Atom, Library, ArrowRight } from "lucide-react";
+import { Brain, Scale, ShieldOff, Atom, Library, ArrowRight, Sparkles } from "lucide-react";
 
 export default function Home() {
   return (
     <div className={styles.container}>
       <header className={styles.hero}>
-        <h1 className={styles.title}>
-          Teaches how to think,<br />not what to chant.
-        </h1>
-        <p className={styles.subtitle}>
-          The Intellectual Hub for the Modern Muslim.
-          <br />
-          Choose your path below to begin the deconstruction.
-        </p>
+        <div className="text-center mb-12">
+          <h1 className={styles.title}>
+            The First Principle
+          </h1>
+          <p className={styles.subtitle}>
+            Teaches how to think, not what to chant.
+          </p>
+        </div>
 
-        {/* DOMAIN HUB SELECTOR */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
+        {/* PORTAL GRID (BENTO STYLE) */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto px-4">
 
-          {/* 1. Philosophy Track */}
-          <Link href="/foundations" className="group block p-8 bg-card border border-border rounded-xl hover:border-primary transition-all hover:shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-              <Brain size={100} />
+          {/* 1. Philosophy Track (Featured - Larger) */}
+          <Link href="/foundations" className="group relative col-span-1 md:col-span-2 lg:col-span-1 row-span-2 bg-gradient-to-br from-card to-secondary/10 border border-border rounded-3xl p-8 hover:border-primary transition-all hover:shadow-2xl overflow-hidden flex flex-col justify-between h-[400px]">
+            <div className="absolute top-0 right-0 p-8 opacity-5 group-hover:opacity-10 transition-opacity transform group-hover:scale-110 duration-700">
+              <Brain size={200} />
             </div>
-            <div className="relative z-10">
-              <Brain className="text-primary mb-4" size={40} />
-              <h3 className="text-2xl font-black font-merriweather mb-2 group-hover:text-primary transition-colors">Philosophy Track</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                Master the core First Principles. From Epistemology (How we know) to Theology (Who God is).
+            <div className="z-10">
+              <div className="bg-primary/10 w-fit p-3 rounded-2xl mb-4">
+                <Brain className="text-primary" size={32} />
+              </div>
+              <h3 className="text-3xl font-black font-merriweather mb-2 text-foreground group-hover:text-primary transition-colors">Philosophy</h3>
+              <p className="text-muted-foreground font-medium leading-relaxed">
+                The Core Curriculum. Build your certainty from the ground up.
               </p>
-              <span className="text-xs font-bold uppercase tracking-widest text-primary flex items-center">
-                Start Curriculum <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
+            </div>
+            <div className="z-10 flex items-center text-sm font-bold uppercase tracking-widest text-primary mt-8">
+              Start Here <ArrowRight size={16} className="ml-2 group-hover:translate-x-2 transition-transform" />
             </div>
           </Link>
 
           {/* 2. Science Suite */}
-          <Link href="/science" className="group block p-8 bg-card border border-border rounded-xl hover:border-blue-500 transition-all hover:shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-              <Atom size={100} />
+          <Link href="/science" className="group relative bg-card border border-border rounded-3xl p-8 hover:border-blue-500 transition-all hover:shadow-xl overflow-hidden h-[190px] flex flex-col justify-center">
+            <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Atom size={120} />
             </div>
-            <div className="relative z-10">
-              <Atom className="text-blue-500 mb-4" size={40} />
-              <h3 className="text-2xl font-black font-merriweather mb-2 group-hover:text-blue-500 transition-colors">Science Suite</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                Reconcile Faith with Reason. Deep dives into Quantum Mechanics, Evolution, and Fine-Tuning.
-              </p>
-              <span className="text-xs font-bold uppercase tracking-widest text-blue-500 flex items-center">
-                Explore Science <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
+            <div className="z-10 flex items-start justify-between">
+              <div>
+                <h3 className="text-xl font-bold font-merriweather mb-1 group-hover:text-blue-500 transition-colors">Science Suite</h3>
+                <p className="text-xs text-muted-foreground font-medium">Quantum, Evolution, Cosmology.</p>
+              </div>
+              <Atom className="text-blue-500" size={28} />
             </div>
           </Link>
 
           {/* 3. The Living Library */}
-          <Link href="/answers" className="group block p-8 bg-card border border-border rounded-xl hover:border-emerald-500 transition-all hover:shadow-lg relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-              <Library size={100} />
+          <Link href="/answers" className="group relative bg-card border border-border rounded-3xl p-8 hover:border-emerald-500 transition-all hover:shadow-xl overflow-hidden h-[190px] flex flex-col justify-center">
+            <div className="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+              <Library size={120} />
             </div>
-            <div className="relative z-10">
-              <Library className="text-emerald-500 mb-4" size={40} />
-              <h3 className="text-2xl font-black font-merriweather mb-2 group-hover:text-emerald-500 transition-colors">Living Library</h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                The Answer Bank, History of Ideas, and Applied Lens. Practical tools for modern doubts.
-              </p>
-              <span className="text-xs font-bold uppercase tracking-widest text-emerald-500 flex items-center">
-                Enter Library <ArrowRight size={14} className="ml-2 group-hover:translate-x-1 transition-transform" />
-              </span>
+            <div className="z-10 flex items-start justify-between">
+              <div>
+                <h3 className="text-xl font-bold font-merriweather mb-1 group-hover:text-emerald-500 transition-colors">The Library</h3>
+                <p className="text-xs text-muted-foreground font-medium">Answers, History, & Applied Lens.</p>
+              </div>
+              <Library className="text-emerald-500" size={28} />
             </div>
           </Link>
+
+          {/* 4. Future Module (Placeholder/Coming Soon) */}
+          <div className="group relative bg-muted/30 border border-border/50 rounded-3xl p-8 overflow-hidden h-[190px] flex flex-col justify-center cursor-not-allowed">
+            <div className="z-10 flex items-start justify-between opacity-50">
+              <div>
+                <h3 className="text-lg font-bold font-merriweather mb-1">Coming Soon</h3>
+                <p className="text-xs text-muted-foreground font-medium">Politics & Economics</p>
+              </div>
+              <Sparkles className="text-muted-foreground" size={28} />
+            </div>
+          </div>
+
+          {/* 5. Kids Mode (Placeholder/Coming Soon) */}
+          <div className="group relative bg-muted/30 border border-border/50 rounded-3xl p-8 overflow-hidden h-[190px] flex flex-col justify-center cursor-not-allowed">
+            <div className="z-10 flex items-start justify-between opacity-50">
+              <div>
+                <h3 className="text-lg font-bold font-merriweather mb-1">Kids Mode</h3>
+                <p className="text-xs text-muted-foreground font-medium">Stories for Little Hearts</p>
+              </div>
+              <Sparkles className="text-muted-foreground" size={28} />
+            </div>
+          </div>
 
         </div>
       </header>
