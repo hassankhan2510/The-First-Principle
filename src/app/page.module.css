@@ -6,35 +6,16 @@
 
 .hero {
   text-align: center;
-  padding: 6rem 0 4rem;
+  padding: 4rem 0 6rem;
   position: relative;
-}
-
-/* Background Shine Effect */
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: 50%;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, transparent 70%);
-  transform: translateX(-50%);
-  z-index: -1;
-  pointer-events: none;
 }
 
 .title {
   font-family: var(--font-merriweather);
-  font-size: 4rem;
+  font-size: 3.5rem;
   font-weight: 900;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
-  background: linear-gradient(135deg, var(--foreground) 0%, var(--muted-foreground) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  margin-bottom: 1rem;
+  color: var(--foreground);
 }
 
 .subtitle {
@@ -46,80 +27,221 @@
   line-height: 1.6;
 }
 
+.versionTag {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.25rem 0.75rem;
+  background: var(--muted);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-family: monospace;
+  opacity: 0.6;
+}
+
+/* BENTO GRID LAYOUT */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  max-width: 1100px;
+  margin: 3rem auto 0;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 200px);
+  }
+}
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  height: 100%;
+  min-height: 200px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15);
+}
+
+/* Feature Card (Philosophy) - Takes 2 rows, 1 col */
+.cardFeatured {
+  background: linear-gradient(135deg, var(--card) 0%, rgba(var(--primary-rgb), 0.05) 100%);
+  grid-row: span 2;
+  justify-content: space-between;
+}
+
+.cardFeatured:hover {
+  border-color: var(--primary);
+}
+
+.cardFeatured .iconBg {
+  opacity: 0.1;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  transform: translateY(-50%) rotate(15deg);
+  transition: all 0.5s ease;
+  color: var(--primary);
+}
+
+.cardFeatured:hover .iconBg {
+  transform: translateY(-50%) rotate(0deg) scale(1.1);
+  opacity: 0.15;
+}
+
+/* Other Cards */
+.cardSecondary {
+  justify-content: center;
+}
+
+.cardSecondary:hover {
+  border-color: #3b82f6;
+  /* Blue for Science */
+}
+
+.cardLibrary:hover {
+  border-color: #10b981;
+  /* Green for Library */
+}
+
+.cardDisabled {
+  background: var(--muted);
+  opacity: 0.6;
+  cursor: not-allowed;
+  justify-content: center;
+}
+
+/* CARD CONTENT */
+.cardTitle {
+  font-family: var(--font-merriweather);
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+  color: var(--foreground);
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--muted-foreground);
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+.cardAction {
+  margin-top: 1.5rem;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+}
+
+.cardAction svg {
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease;
+}
+
+.card:hover .cardAction svg {
+  transform: translateX(4px);
+}
+
+/* ICONS */
+.cardIcon {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 1rem;
+  color: var(--foreground);
+}
+
+.cardFeatured .cardIcon {
+  color: var(--primary);
+}
+
+.cardSecondary .cardIcon {
+  color: #3b82f6;
+}
+
+.cardLibrary .cardIcon {
+  color: #10b981;
+}
+
+/* RULES SECTION */
 .section {
+  padding: 0 2rem;
   margin-bottom: 6rem;
 }
 
 .sectionTitle {
+  text-align: center;
   font-family: var(--font-merriweather);
   font-size: 2rem;
   font-weight: 800;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 .rulesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 .ruleCard {
   background: var(--card);
-  /* Fallback */
-  background: linear-gradient(145deg, var(--card), rgba(255, 255, 255, 0.05));
   border: 1px solid var(--border);
-  padding: 2.5rem;
+  padding: 2rem;
   border-radius: var(--radius);
   text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s;
 }
 
 .ruleCard:hover {
-  transform: translateY(-5px);
+  transform: translateY(-4px);
   border-color: var(--primary);
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 .ruleIconWrapper {
-  width: 64px;
-  height: 64px;
-  background-color: var(--muted);
+  width: 56px;
+  height: 56px;
   border-radius: 50%;
+  background: var(--muted);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1rem;
   color: var(--primary);
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
-
-.ruleCard:hover .ruleIconWrapper {
-  background-color: var(--primary);
-  color: var(--primary-foreground);
 }
 
 .ruleTitle {
-  font-family: var(--font-merriweather);
-  font-size: 1.25rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  font-family: var(--font-merriweather);
+  margin-bottom: 0.5rem;
 }
 
 .ruleDesc {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: var(--muted-foreground);
   line-height: 1.6;
-}
-
-@media (max-width: 768px) {
-  .title {
-    font-size: 2.5rem;
-  }
-
-  .hero {
-    padding: 4rem 0 2rem;
-  }
 }
