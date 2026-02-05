@@ -14,6 +14,9 @@ export default function Home() {
           <p className={styles.subtitle}>
             Teaches how to think, not what to chant.
           </p>
+          <div className="mt-4 inline-block px-3 py-1 bg-muted/50 rounded-full text-[10px] font-mono text-muted-foreground opacity-70">
+            v2.1: Bento Grid Active
+          </div>
         </div>
 
         {/* PORTAL GRID (BENTO STYLE) */}
