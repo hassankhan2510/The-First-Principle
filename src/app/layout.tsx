@@ -1,3 +1,4 @@
+import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import { Inter, Merriweather } from "next/font/google";
 import "./globals.css";
@@ -65,6 +66,7 @@ export default function RootLayout({
         <Shell>
           {children}
         </Shell>
+        <Analytics />
       </body>
     </html>
   );
