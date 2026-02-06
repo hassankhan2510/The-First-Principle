@@ -4,6 +4,7 @@ import AssumptionToggle from "@/components/ui/AssumptionToggle";
 import { Brain, Scale, ShieldOff, Atom, Library, ArrowRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import JsonLd from "@/components/seo/JsonLd";
+import KnowledgeMap from "@/components/ui/KnowledgeMap";
 
 export default function Home() {
   const jsonLd = {
@@ -30,7 +31,9 @@ export default function Home() {
           <p className={styles.subtitle}>
             Teaches how to think, not what to chant.
           </p>
-          {/* Version tag removed */}
+          <div className="mt-8 mb-16">
+            <KnowledgeMap />
+          </div>
         </div>
 
         {/* PORTAL GRID (BENTO STYLE) */}
@@ -73,23 +76,7 @@ export default function Home() {
             </div>
           </Link>
 
-          {/* 4. Future Module */}
-          <div className={styles.cardDisabled}>
-            <div className="opacity-50">
-              <Sparkles size={32} className={styles.cardIcon} />
-              <h3 className="font-bold text-lg mb-1">Coming Soon</h3>
-              <p className="text-xs text-muted-foreground">Politics & Economics</p>
-            </div>
-          </div>
-
-          {/* 5. Kids Mode */}
-          <div className={styles.cardDisabled}>
-            <div className="opacity-50">
-              <Sparkles size={32} className={styles.cardIcon} />
-              <h3 className="font-bold text-lg mb-1">Kids Mode</h3>
-              <p className="text-xs text-muted-foreground">Stories for Little Hearts</p>
-            </div>
-          </div>
+          {/* Removed Disabled Cards (Coming Soon/Kids Mode) for Clean Launch */}
 
         </div>
       </header>
