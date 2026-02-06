@@ -129,6 +129,28 @@
     box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3);
 }
 
+.card,
+.cardLink {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardLink {
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.cardLink:hover {
+    border-color: #ef4444;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(239, 68, 68, 0.1);
+}
+
 .deconstructionTitle {
     text-transform: uppercase;
     letter-spacing: 0.1em;

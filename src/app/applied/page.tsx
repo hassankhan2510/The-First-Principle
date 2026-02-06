@@ -1,5 +1,6 @@
+import Link from "next/link";
 import styles from "./page.module.css";
-import { Microscope, Bot, HeartCrack, ShoppingBag, Scale } from "lucide-react";
+import { Bot, HeartCrack, ShoppingBag, Scale, ArrowRight, Users, Brain } from "lucide-react";
 
 export default function AppliedPage() {
     return (
@@ -12,14 +13,32 @@ export default function AppliedPage() {
                 </p>
             </header>
 
-            <div className={styles.point}>
-                <strong>The Outcome:</strong> The Atomization of Society. When the Family unit breaks, the State becomes the "Father" and the Corporation becomes the "Husband."
-            </div>
-        </div>
-                </div >
+            <div className={styles.grid}>
 
-        {/* 2. AI */ }
-        < div className = { styles.card } >
+                {/* 1. Feminism */}
+                <div className={styles.card}>
+                    <div className={styles.cardHeader}>
+                        <div className={styles.cardIcon}>
+                            <HeartCrack size={20} />
+                        </div>
+                        <h2 className={styles.cardTitle}>Feminism & The Family</h2>
+                    </div>
+                    <div className={styles.cardContent}>
+                        <div className={styles.narrativeBox}>
+                            "Gender is just a social construct. True freedom means total independence from family roles."
+                        </div>
+                        <span className={styles.deconstructionTitle}>The Deconstruction</span>
+                        <div className={styles.point}>
+                            <strong>Metaphysics (Fitra):</strong> It ignores biological reality. Men and Women are equal in value (Soul) but different in function (Body/Psychology). You cannot build a society on "Sameness."
+                        </div>
+                        <div className={styles.point}>
+                            <strong>The Outcome:</strong> The Atomization of Society. When the Family unit breaks, the State becomes the "Father" and the Corporation becomes the "Husband."
+                        </div>
+                    </div>
+                </div>
+
+                {/* 2. AI */}
+                <div className={styles.card}>
                     <div className={styles.cardHeader}>
                         <div className={styles.cardIcon}>
                             <Bot size={20} />
@@ -38,15 +57,15 @@ export default function AppliedPage() {
                             <strong>The Problem:</strong> The "Idolatry of Intellect." We confuse Calculation speed with Wisdom.
                         </div>
                     </div>
-                </div >
+                </div>
 
-        {/* 3. Liberalism */ }
-        < div className = { styles.card } >
+                {/* 3. Liberalism (LINKED MODULE) */}
+                <Link href="/applied/liberalism" className={styles.cardLink}>
                     <div className={styles.cardHeader}>
-                        <div className={styles.cardIcon}>
+                        <div className={`${styles.cardIcon} text-red-500`}>
                             <Scale size={20} />
                         </div>
-                        <h2 className={styles.cardTitle}>Liberalism (The Harm Principle)</h2>
+                        <h2 className={`${styles.cardTitle} text-red-500`}>Liberalism (The Harm Principle)</h2>
                     </div>
                     <div className={styles.cardContent}>
                         <div className={styles.narrativeBox}>
@@ -54,16 +73,16 @@ export default function AppliedPage() {
                         </div>
                         <span className={styles.deconstructionTitle}>The Deconstruction</span>
                         <div className={styles.point}>
-                            <strong>Ethics:</strong> It assumes the only "Harm" is physical. It ignores <em>Moral Harm</em>. If a society normalizes vice, the entire community rots (Crime, Broken Families, Depression).
+                            <strong>Ethics:</strong> It assumes the only "Harm" is physical. It ignores <em>Moral Harm</em>. Absolute Freedom is actually slavery to the Self.
                         </div>
-                        <div className={styles.point}>
-                            <strong>The Reality:</strong> Absolute Freedom is just slavery to Impulse (Hawa). True Freedom is discipline.
+                        <div className="mt-4 flex items-center text-xs font-bold uppercase tracking-widest text-red-500">
+                            Enter the Deep Dive <ArrowRight size={14} className="ml-2" />
                         </div>
                     </div>
-                </div >
+                </Link>
 
-        {/* 4. Consumerism */ }
-        < div className = { styles.card } >
+                {/* 4. Consumerism */}
+                <div className={styles.card}>
                     <div className={styles.cardHeader}>
                         <div className={styles.cardIcon}>
                             <ShoppingBag size={20} />
@@ -82,9 +101,9 @@ export default function AppliedPage() {
                             <strong>The Cure:</strong> Zuhd (Detachment). Owning the world in your hand, not in your heart.
                         </div>
                     </div>
-                </div >
+                </div>
 
-            </div >
-        </div >
+            </div>
+        </div>
     );
 }
