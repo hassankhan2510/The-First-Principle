@@ -3,10 +3,25 @@ import styles from "./page.module.css";
 import AssumptionToggle from "@/components/ui/AssumptionToggle";
 import { Brain, Scale, ShieldOff, Atom, Library, ArrowRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import JsonLd from "@/components/seo/JsonLd";
 
 export default function Home() {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "The First Principle",
+    "url": "https://thefirstprinciple.app",
+    "description": "A first-principles approach to Islamic Philosophy.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://thefirstprinciple.app/answers?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  };
+
   return (
     <div className={styles.container}>
+      <JsonLd data={jsonLd} />
       <header className={styles.hero}>
         <div className="text-center mb-12">
           <h1 className={styles.title}>
