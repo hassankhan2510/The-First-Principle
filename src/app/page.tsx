@@ -30,9 +30,7 @@ export default function Home() {
           <p className={styles.subtitle}>
             Teaches how to think, not what to chant.
           </p>
-          <div className={styles.versionTag}>
-            v2.2: CSS Grid Fixed
-          </div>
+          {/* Version tag removed */}
         </div>
 
         {/* PORTAL GRID (BENTO STYLE) */}
