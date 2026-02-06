@@ -1,0 +1,87 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1rem;
+    backdrop-filter: blur(5px);
+}
+
+.navButton {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    text-decoration: none;
+    color: #a3a3a3;
+    transition: all 0.2s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+}
+
+.navButton:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.next {
+    text-align: right;
+    flex-direction: row;
+    /* Keep standard flow, just align content */
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+
+.subtext {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.1rem;
+}
+
+.spacer {
+    width: 100px;
+    /* Approximate width of a button to keep center aligned */
+}
+
+.indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+        flex-direction: row;
+        /* Keep row but minimize info */
+    }
+
+    .label {
+        font-size: 0.9rem;
+    }
+
+    .subtext {
+        display: none;
+        /* Hide 'Previous'/'Next' text on very small screens if needed, but keeping for now */
+    }
+
+    .indicator {
+        display: none;
+        /* Hide middle indicator on mobile to save space */
+    }
+
+    .spacer {
+        width: 0;
+    }
+}

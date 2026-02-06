@@ -3,7 +3,8 @@ import AssumptionToggle from "@/components/ui/AssumptionToggle";
 import ComparisonTable from "@/components/ui/ComparisonTable";
 import JargonBuster from "@/components/ui/JargonBuster";
 import References from "@/components/ui/References";
-import { BookOpen, Microscope, Brain, Scale, Eye, Globe } from "lucide-react";
+import { Brain, Eye, MessageSquare, AlertTriangle, Lightbulb, BookOpen, Microscope, Scale, Globe } from "lucide-react"; // Merged lucide-react imports
+import ModuleNavigation from "@/components/ui/ModuleNavigation";
 
 export default function EpistemologyPage() {
     return (
@@ -15,6 +16,8 @@ export default function EpistemologyPage() {
                     The problem isn't the stone. It's the wrong tool.
                 </p>
             </header>
+
+            <ModuleNavigation />
 
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>

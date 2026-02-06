@@ -4,6 +4,7 @@ import JargonBuster from "@/components/ui/JargonBuster";
 import References from "@/components/ui/References";
 import ComparisonTable from "@/components/ui/ComparisonTable";
 import { Brain, Map as MapIcon, ShieldCheck, Microscope } from "lucide-react";
+import ModuleNavigation from "@/components/ui/ModuleNavigation";
 
 export default function FoundationsPage() {
     return (
@@ -16,6 +17,8 @@ export default function FoundationsPage() {
                     This is <strong>Epistemology</strong>.
                 </p>
             </header>
+
+            <ModuleNavigation />
 
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
@@ -128,6 +131,8 @@ export default function FoundationsPage() {
                     ]} />
                 </div>
             </section>
+
+            <ModuleNavigation />
         </div>
     );
 }

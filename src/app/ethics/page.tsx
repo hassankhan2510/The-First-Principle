@@ -3,6 +3,7 @@ import ComparisonTable from "@/components/ui/ComparisonTable";
 import AssumptionToggle from "@/components/ui/AssumptionToggle";
 import References from "@/components/ui/References";
 import { Scale, Heart, ShieldAlert, Gavel } from "lucide-react";
+import ModuleNavigation from "@/components/ui/ModuleNavigation";
 
 export default function EthicsPage() {
     return (
@@ -14,6 +15,8 @@ export default function EthicsPage() {
                     Without a transcendent anchor, "Human Rights" are just "Human Preferences."
                 </p>
             </header>
+
+            <ModuleNavigation />
 
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
@@ -95,6 +98,8 @@ export default function EthicsPage() {
                     { title: "The impossibility of Moral Obligation without God", author: "Elizabeth Anscombe", note: "Philosophical critique of secular duty." }
                 ]} />
             </div>
+
+            <ModuleNavigation />
         </div>
     );
 }

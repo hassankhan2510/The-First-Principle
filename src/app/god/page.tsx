@@ -4,6 +4,7 @@ import ComparisonTable from "@/components/ui/ComparisonTable";
 import JargonBuster from "@/components/ui/JargonBuster";
 import References from "@/components/ui/References";
 import { Sparkles, ArrowRight, Layers, HelpCircle, Network } from "lucide-react";
+import ModuleNavigation from "@/components/ui/ModuleNavigation";
 
 export default function GodPage() {
     return (
@@ -15,6 +16,8 @@ export default function GodPage() {
                     The <strong>Argument from Contingency</strong> (Burhan al-Siddiqin) relies on existence itself, not just the motion of atoms.
                 </p>
             </header>
+
+            <ModuleNavigation />
 
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>

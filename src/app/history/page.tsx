@@ -1,5 +1,7 @@
+
 import styles from "./page.module.css";
-import { History, Brain, Skull, CloudOff, Lock, Anchor, Dna } from "lucide-react";
+import { GraduationCap, BookOpen, Scroll, Flag, Quote, Lightbulb, Brain, Skull, CloudOff, Lock, Anchor, Dna } from "lucide-react";
+import ModuleNavigation from "@/components/ui/ModuleNavigation";
 
 export default function HistoryPage() {
     return (
@@ -11,7 +13,9 @@ export default function HistoryPage() {
                 </p>
             </header>
 
-            <div className={styles.timeline}>
+            <ModuleNavigation />
+
+            <div className={styles.grid}>
                 {/* 1. Descartes */}
                 <div className={styles.timelineItem}>
                     <div className={styles.timelineContent}>
@@ -170,6 +174,8 @@ export default function HistoryPage() {
                     </div>
                 </div>
             </div>
+
+            <ModuleNavigation />
         </div>
     );
 }

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import styles from "./page.module.css";
 import { Bot, HeartCrack, ShoppingBag, Scale, ArrowRight, Users, Brain } from "lucide-react";
+import ModuleNavigation from "@/components/ui/ModuleNavigation";
 
 export default function AppliedPage() {
     return (
@@ -12,6 +13,8 @@ export default function AppliedPage() {
                     Here is how to use First Principles to deconstruct the headlines you see every day.
                 </p>
             </header>
+
+            <ModuleNavigation />
 
             <div className={styles.grid}>
 
@@ -104,6 +107,8 @@ export default function AppliedPage() {
                 </div>
 
             </div>
+
+            <ModuleNavigation />
         </div>
     );
 }

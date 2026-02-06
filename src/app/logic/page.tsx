@@ -3,7 +3,8 @@ import AssumptionToggle from "@/components/ui/AssumptionToggle";
 import ComparisonTable from "@/components/ui/ComparisonTable";
 import JargonBuster from "@/components/ui/JargonBuster";
 import References from "@/components/ui/References";
-import { GitBranch, Scale, AlertTriangle, Brain } from "lucide-react";
+import { GitBranch, Scale, AlertTriangle, Brain, Sparkles, ArrowRight, CheckCircle, Flame } from "lucide-react";
+import ModuleNavigation from "@/components/ui/ModuleNavigation";
 
 export default function LogicPage() {
     return (
@@ -15,6 +16,8 @@ export default function LogicPage() {
                     Logic is the immune system of the mind. Without it, you will accept any virus of thought.
                 </p>
             </header>
+
+            <ModuleNavigation />
 
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
@@ -120,6 +123,8 @@ export default function LogicPage() {
                     ]} />
                 </div>
             </section>
+
+            <ModuleNavigation />
         </div>
     );
 }

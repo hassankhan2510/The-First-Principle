@@ -2,6 +2,7 @@ import styles from "./page.module.css";
 import AssumptionToggle from "@/components/ui/AssumptionToggle";
 import References from "@/components/ui/References";
 import { Network, Box, Copy, Workflow } from "lucide-react";
+import ModuleNavigation from "@/components/ui/ModuleNavigation";
 
 export default function MetaphysicsPage() {
     return (
@@ -14,6 +15,7 @@ export default function MetaphysicsPage() {
                 </p>
             </header>
 
+            <ModuleNavigation />
             <section className={styles.section}>
                 <h2 className={styles.sectionTitle}>
                     <Box className={styles.icon} />
@@ -87,6 +89,8 @@ export default function MetaphysicsPage() {
                     { title: "Metaphysics", author: "Aristotle", note: "The foundational definitions of potentiality and actuality." }
                 ]} />
             </div>
+
+            <ModuleNavigation />
         </div>
     );
 }
